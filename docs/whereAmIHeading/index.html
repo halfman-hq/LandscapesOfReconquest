@@ -5,21 +5,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="style.css">
-    
     <!-- import the webpage's javascript file -->
     <script src="script.js"></script>
-  </head>  
+  </head>
   <body>
     <h1>Where Am I? Heading</h1>
-    
     <p>
       Concerned with <a href="https://developer.mozilla.org/en-US/docs/Web/API/Coordinates/heading#Browser_compatibility">browser compatibility</a>.
+      <button onclick="getLocation()">Try It</button>
     </p>
-
-    <button onclick="getLocation()">Try It</button>
-    <div id="out"></div>
+    <p id="out">
+      
+    </p>
   </body>
 </html>
