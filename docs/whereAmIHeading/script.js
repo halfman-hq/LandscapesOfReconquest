@@ -23,14 +23,7 @@ function success(position) {
   var altitude = position.coords.altitude;
   var altitudeAccuracy = position.coords.altitudeAccuracy;
 
-  output.innerHTML = '<p>Latitude is ' + latitude
-    + '° <br>Longitude is ' + longitude + '°'
-    + '<br>Speed is ' + speed
-    + '<br>Heading is ' + heading
-    + '<br>Accuracy is ' + accuracy
-    + '<br>Altitude is ' + altitude
-    + '<br>Altitude accuracy is ' + altitudeAccuracy
-    + '</p>';
+  output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°' + '<br>Speed is ' + speed + '<br>Heading is ' + heading + '<br>Accuracy is ' + accuracy + '<br>Altitude is ' + altitude + '<br>Altitude accuracy is ' + altitudeAccuracy + '</p>';
 
   //var img = new Image();
   //img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
