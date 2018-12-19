@@ -11,19 +11,7 @@ var options = {
   maximumAge: 0 //integer (milliseconds]) - amount of time before the error callback is invoked, if 0 it will never invoke.
 };
 
-// https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition
-// https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition
-// button logic: https://www.w3schools.com/html/html5_geolocation.asp
 var output = document.getElementById("out");
-
-function getLocation() {
-  if (navigator.geolocation) {
-    //navigator.geolocation.getCurrentPosition(success, error, options);
-    navigator.geolocation.watchPosition(success, error, options);
-  } else {
-    output.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
 
 function success(position) {
   //https://developer.mozilla.org/en-US/docs/Web/API/Coordinates
@@ -35,13 +23,13 @@ function success(position) {
   var altitude = position.coords.altitude;
   var altitudeAccuracy = position.coords.altitudeAccuracy;
 
-  output.innerHTML = '<p>Latitude is ' + latitude 
-    + '° <br>Longitude is ' + longitude + '°' 
+  output.innerHTML = '<p>Latitude is ' + latitude
+    + '° <br>Longitude is ' + longitude + '°'
     + '<br>Speed is ' + speed
     + '<br>Heading is ' + heading
     + '<br>Accuracy is ' + accuracy
     + '<br>Altitude is ' + altitude
-    + '<br>Altitude accuracy is ' + altitudeAccuracy    
+    + '<br>Altitude accuracy is ' + altitudeAccuracy
     + '</p>';
 
   //var img = new Image();
@@ -53,4 +41,13 @@ function success(position) {
 
 function error() {
   output.innerHTML = "Unable to retrieve your location";
+}
+
+function getLocation() {
+  if (navigator.geolocation) {
+    //navigator.geolocation.getCurrentPosition(success, error, options);
+    navigator.geolocation.watchPosition(success, error, options);
+  } else {
+    output.innerHTML = "Geolocation is not supported by this browser.";
+  }
 }
